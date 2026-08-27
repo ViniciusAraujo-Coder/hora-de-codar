@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Digite o nome do seu animal de estimação:");
         String nomePet = entrada.nextLine();
 
-        Bicho pet = new Bicho(nomePet);// Cria um novo animal de estimação com o nome fornecido
+        BichinhoVirtual pet = new BichinhoVirtual(nomePet);// Cria um novo animal de estimação com o nome fornecido
 
         boolean continuar = true;
 

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-class Bicho {
+class BichinhoVirtual {
+    
     String nome;
     int nivelDeFome = 50;
     int nivelFelicidade = 50;

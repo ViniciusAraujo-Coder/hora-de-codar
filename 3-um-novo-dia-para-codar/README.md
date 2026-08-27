@@ -18,3 +18,40 @@ Peça novamente para o usuário digitar o nome de uma fruta para ser removida.
 - Sempre que o usuário procurar por uma fruta que não está no array exiba a mensagem "Fruta indisponível no nosso mercado".
 - Quando o usuário digitar "PARE", exiba a lista de frutas restantes.
 - Quando o array não possuir mais itens dentro de si, escreva "Lista de compras finalizada".
+
+
+### 4 - Agenda de Contatos (Exemplo pronto)
+Crie um programa que funcione como uma agenda de contatos.
+
+O usuário pode cadastrar contatos informando nome e telefone (armazene como objetos em um array).
+
+O programa deve permitir que o usuário busque um contato pelo nome.
+
+Se o contato existir, exiba o telefone; se não existir, exiba "Contato não encontrado".
+
+O usuário também pode remover um contato pelo nome.
+
+Quando o usuário digitar "LISTAR", exiba todos os contatos cadastrados (nome e telefone).
+
+Quando o usuário digitar "SAIR", encerre o programa exibindo a mensagem "Agenda encerrada. Total de contatos: X".
+
+```
+Digite um comando (ADICIONAR, BUSCAR, REMOVER, LISTAR, SAIR): ADICIONAR
+Nome: Ana
+Telefone: 99999-8888
+Contato adicionado!
+
+Digite um comando: BUSCAR
+Nome: Ana
+Telefone: 99999-8888
+
+Digite um comando: REMOVER
+Nome: Ana
+Contato removido!
+
+Digite um comando: LISTAR
+Nenhum contato cadastrado.
+
+Digite um comando: SAIR
+Agenda encerrada. Total de contatos: 0
+```
