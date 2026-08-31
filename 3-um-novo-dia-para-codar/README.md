@@ -3,11 +3,11 @@
 
 Hoje vamos dar os primeiros passos no fascinante mundo das estruturas de dados! Para começar, exploraremos um dos elementos mais importantes dessa área: os arrays. Prepare-se para encarar os desafios abaixo e descobrir como eles funcionam na prática.
 
-### 1 - Estudantes. 
+### 1 - Estudantes
 Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar "PARE" o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles.
 
 ### 2 - Planetas
-Exiba uma lista de planetas do sistema solar("Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno" e "Plutão") para o usuário. Em seguida, peça ao usuário para digitar o nome de um planeta. Verifique se o planeta que o usuário informou está na lista e informe ao usuário.
+Exiba uma lista de planetas do sistema solar ("Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno" e "Plutão") para o usuário. Em seguida, peça ao usuário para digitar o nome de um planeta. Verifique se o planeta que o usuário informou está na lista e informe ao usuário.
 
 ### 3 - Compras
 Vamos criar uma lista de compras.
