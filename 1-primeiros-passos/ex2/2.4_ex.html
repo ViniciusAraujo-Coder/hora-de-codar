@@ -1,48 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Execicio 2.2</title>
+</head> 
+
+<!-- FALTA TERMINAR ESSE -->
 <script>
 
     var n1 = Number(prompt(`Digite o primeiro número: `))
     var n2 = Number(prompt(`Digite o segundo número: `))
     var n3 = Number(prompt(`Digite o terceiro número: `))
+    var n4 = Number(prompt(`Digite o q número: `))
+    var n5 = Number(prompt(`Digite o quinto número: `))
+    var n6 = Number(prompt(`Digite o sexto número: `))
 
-    if (n1 > n2 && n1 > n3){
-        if (n2 > n3){
-            result = n1+n2
-            alert(`Resultado: ${result}`)
-        }
-        else{
-            result = n1+n3
-            alert(`Resultado: ${result}`)
-        }
-    }
+    var media = ((n1+n2+n3+n4+n5+n6)/6)
 
-    else if (n2 > n1 && n2 > n3){
-        if (n1 > n3){
-            result = n2+n1
-            alert(`Resultado: ${result}`)
-        }
-        else{
-            result = n2+n3
-            alert(`Resultado: ${result}`)
-        }
-    }
+    document.write(`Os números digitados foram: ${n1}, ${n2}, ${n3}, ${n4}, ${n5} e ${n6}. <br>`)
 
-    else if (n3 > n1 && n3 > n2){
-        if (n1 > n2){
-            result = n3+n1
-            alert(`Resultado: ${result}`)
-        }
-        else{
-            result = n3+n2
-            alert(`Resultado: ${result}`)
-        }
-    }
+    document.write(`A média dos números digitados é: ${media.toFixed(2)}`)
 
 </script>
 <body>
