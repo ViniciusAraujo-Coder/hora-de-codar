@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3.2</title>
+    <script>
+        //3.2. Leia dois valores. Enquanto o segundo valor for menor ou igual a zero, peça novamente esse mesmo valor. Ao final, mostre a divisão do primeiro pelo segundo.
+        let n1
+        let n2
+
+        while (true) {
+
+            n1 = prompt("Digite um número:")
+
+            if (!isNaN(n1)) {
+                break
+            }
+
+            alert("Digite apenas números.")
+        }
+
+        while(true) {
+            n2 = prompt("Digite um segundo número: ")
+
+            if (!isNaN(n2))
+            {
+                if (n2 > 0){
+                    break
+            }
+            }
+            alert("Digite apenas números e valores acima de 0.")
+        }
+
+        resultado = (n1/n2)
+
+        alert(`A divisão de ${n1} por ${n2} é: ${resultado.toFixed(2)}.`)
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
