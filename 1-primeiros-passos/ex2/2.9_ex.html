@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execicio 2.9</title>
+</head>
+<script>
+
+    // 2.9. Leia o ano de nascimento e informe se a pessoa pode votar no ano atual (sem considerar o mês).
+
+    var anoNascimento
+    var anoAtual = 2026
+
+    while (true) {
+
+        anoNascimento = Number(prompt(`Digite o seu ano de nascimento: `))
+
+        if (!isNaN(anoNascimento) && anoNascimento > 0 && anoNascimento <= anoAtual) {
+            break
+        }
+
+        alert(`Digite apenas anos válidos!`)
+    }
+
+    var idade = anoAtual - anoNascimento
+
+    alert(`De acordo com o Tribunal Superior Eleitoral (TSE), a idade mínima para solicitar o título de eleitor é de 15 anos - mas a idade mínima aceita para votar é 16 anos.`)
+
+    if (idade >= 16 ) {
+        alert(`Você tem ${idade} e pode votar!`)
+
+    } else {
+        alert(`Você tem ${idade} e não pode votar!`)
+    }
+
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execicio 2.8</title>
+</head>
+<script>
+
+    // 2.8. Leia 4 números, aceitando apenas valores maiores que 0 e menores que 10. Calcule a média e:
+
+    var n1
+    var n2
+    var n3
+    var n4
+
+    while (true) {
+
+        n1 = Number(prompt(`Digite o primeiro valor: `))
+
+        if (!isNaN(n1) && n1 > 0 && n1 < 10){
+            break
+        }
+
+        alert(`Digite apenas números e valores entre "0 e 10".`)
+    }
+
+    while(true){
+
+        n2 = Number(prompt(`Digite o segundo valor: `))
+
+        if (!isNaN(n2) && n2 > 0 && n2 < 10){
+            break
+        }
+
+        alert(`Digite apenas números e valores entre "0 e 10".`)
+    }
+
+    while(true){
+
+        n3 = Number(prompt(`Digite o terceiro valor: `))
+
+        if (!isNaN(n3) && n3 > 0 && n3 < 10){
+            break
+        }
+
+        alert(`Digite apenas números e valores entre "0 e 10".`)
+    }
+
+    while(true){
+
+        n4 = Number(prompt(`Digite o quarto valor: `))
+
+        if (!isNaN(n4) && n4 > 0 && n4 < 10){
+            break
+        }
+
+        alert(`Digite apenas números e valores entre "0 e 10".`)
+    }
+
+    var media = ((n1+n2+n3+n4)/4)
+
+    if (media > 5){
+        alert(`Você passou no teste com a nota ${media}`)
+    } else {
+        alert(`Você reprovou no teste com a nota ${media}`)
+        alert(`Tente novamente`)
+    }
+
+</script>
+<body>
+    
+</body>
+</html>

@@ -7,15 +7,17 @@
 </head>
 <script>
 
-    var num1 = prompt(`Digite o primeiro número: `)
+    //2.2. Leia um valor e diga se ele é positivo, negativo ou zero.
 
-    if (num1 >= 1){
+    var num1 = Number(prompt(`Digite o primeiro número: `))
+
+    if (num1 > 0){
         alert(`O ${num1} é positivo`)
     }
     else if (num1 < 0){
         alert(`O ${num1} é negativo`)
     }
-    else if (num1 == 0) {
+    else {
         alert(`O valor é igual a 0`)
     }
 

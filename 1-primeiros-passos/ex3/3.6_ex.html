@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3.6</title>
+    <script>
+
+    //3.6. Leia 6 notas válidas (de 0 a 10), calcule e exiba a média simples.
+
+    let n1
+    let n2
+    let n3
+    let n4
+    let n5
+    let n6
+    let media
+
+    while (true) {
+        n1 = Number(prompt(`Digite a primeira nota: `))
+
+        if (!isNaN(n1) && n1 >= 0 && n1 <= 10) {
+            break;
+        }
+        alert(`Digite uma nota válida!`)
+    }
+
+    while (true) {
+        n2 = Number(prompt(`Digite a primeira nota: `))
+
+        if (!isNaN(n2) && n2 >= 0 && n2 <= 10) {
+            break;
+        }
+        alert(`Digite uma nota válida!`)
+    }
+
+    while (true) {
+        n3 = Number(prompt(`Digite a primeira nota: `))
+
+        if (!isNaN(n3) && n3 >= 0 && n3 <= 10) {
+            break;
+        }
+        alert(`Digite uma nota válida!`)
+    }
+
+    while (true) {
+        n4 = Number(prompt(`Digite a primeira nota: `))
+
+        if (!isNaN(n4) && n4 >= 0 && n4 <= 10) {
+            break;
+        }
+        alert(`Digite uma nota válida!`)
+    }
+
+    while (true) {
+        n5 = Number(prompt(`Digite a primeira nota: `))
+
+        if (!isNaN(n5) && n5>= 0 && n5 <= 10) {
+            break;
+        }
+        alert(`Digite uma nota válida!`)
+    }
+
+    while (true) {
+        n6 = Number(prompt(`Digite a primeira nota: `))
+
+        if (!isNaN(n6) && n6 >= 0 && n6 <= 10) {
+            break;
+        }
+        alert(`Digite uma nota válida!`)
+    }
+
+    media = (n1+n2+n3+n4+n5+n6)/6
+
+    document.write(`A média das seguintes notas: ${n1}, ${n2}, ${n3}, ${n4}, ${n5} e ${n6} <br>`)
+    document.write(`É: ${media.toFixed(2)}`)
+  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

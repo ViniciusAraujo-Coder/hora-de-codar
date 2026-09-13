@@ -1,33 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 3.3</title>
+    <title>Exercicio 3.4</title>
     <script>
+
     //3.4. Leia dois inteiros (sendo o primeiro menor que o segundo) e calcule a média desses números e de todos os inteiros entre eles.
 
     let n1
+    let n2
+
+    let soma = 0
+    let contador = 0
 
     while (true){
 
-        let n1 = prompt(`Digite um número: `)
+        n1 = Number(prompt(`Digite um número: `))
 
-        if (!NaN(n1)){
+        if (Number.isInteger(n1)){
             break;
         }
 
         alert(`Digite um número válido!`)
+    }
+
+    while(true){
+
+        n2 = Number(prompt(`Digite o segundo número: `))
+
+        if (Number.isInteger(n2) && n2 > n1){
+            break;
+        }
+
+        alert(`Digite apenas um número válido e maior que o anterior.`)
 
     }
-        
+
+    for(let i = n1; i <= n2; i++){
+        soma = soma+i
+        contador++
+    }
+
+    let media = soma/contador
+
+    alert(`A média dos inteiros entre os números ${n1} e ${n2} é ${media.toFixed(2)}`)
 
         
-
-
-
-
-
     </script>
 </head>
 <body>

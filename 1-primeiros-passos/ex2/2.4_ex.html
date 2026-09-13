@@ -6,21 +6,38 @@
     <title>Execicio 2.2</title>
 </head> 
 
-<!-- FALTA TERMINAR ESSE -->
 <script>
+
+    // 2.4. Leia 3 valores diferentes e mostre a soma dos 2 maiores.
 
     var n1 = Number(prompt(`Digite o primeiro número: `))
     var n2 = Number(prompt(`Digite o segundo número: `))
     var n3 = Number(prompt(`Digite o terceiro número: `))
-    var n4 = Number(prompt(`Digite o q número: `))
-    var n5 = Number(prompt(`Digite o quinto número: `))
-    var n6 = Number(prompt(`Digite o sexto número: `))
 
-    var media = ((n1+n2+n3+n4+n5+n6)/6)
+    var maior1;
+    var maior2;
+    var soma;
 
-    document.write(`Os números digitados foram: ${n1}, ${n2}, ${n3}, ${n4}, ${n5} e ${n6}. <br>`)
+    if (n1 < n2 && n1 < n3) {
+        maior1 = n2
+        maior2 = n3
+        soma = n2 + n3
+    }
 
-    document.write(`A média dos números digitados é: ${media.toFixed(2)}`)
+    else if (n2 < n1 && n2 < n3) {
+        maior1 = n1
+        maior2 = n3
+        soma = n1 + n3
+    }
+
+    else {
+        maior1 = n1
+        maior2 = n2
+        soma = n1 + n2
+    }
+
+    document.write(`Os dois maiores números digitados foram: ${maior1} e ${maior2}. <br>`)
+    document.write(`A soma dos dois maiores números é: ${soma}`)
 
 </script>
 <body>

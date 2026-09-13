@@ -6,14 +6,21 @@
     <title>Execicio 2.1</title>
 </head>
 <script>
-    var num1 = prompt(`Digite o primeiro número: `)
-    var num2 = prompt(`Digite o segundo número: `)
+
+    //2.1. Leia dois números e mostre o maior deles.
+
+    var num1 = Number(prompt(`Digite o primeiro número: `))
+    var num2 = Number(prompt(`Digite o segundo número: `))
 
     if (num1 > num2){
         alert(`O ${num1} é maior que ${num2}`)
     }
-    else {
+    else if (num1 < num2) {
         alert(`O ${num2} é maior que ${num1}`)
+    }
+
+    else{
+        alert(`Os números são iguais`)
     }
 
 </script>

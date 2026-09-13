@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 3.1</title>
     <script>
-        
-        let relogio = 30;
-        while(relogio > 0){
-            document.write(`${relogio}<br>`)
-            relogio --
-        }
 
-        document.write(`EXPLOSÃO`)
+        // 3.1. Crie uma bomba-relógio com contagem regressiva de 30 até 0 e, ao final, escreva EXPLOSÃO.
+
+        for (let relogio = 30; relogio >= 0; relogio--) {
+            setTimeout(function() {
+                document.write(`${relogio}<br>`);
+                
+                if (relogio === 0) {
+                    document.write(`EXPLOSÃO`);
+                }
+            }, (30 - relogio) * 1000);
+        }
 
     </script>
 </head>

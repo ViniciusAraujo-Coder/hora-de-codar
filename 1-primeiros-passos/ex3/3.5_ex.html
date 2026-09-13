@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3.5</title>
+    <script>
+
+    //3.5. Leia 2 notas de um aluno, calcule a média final e considere aprovação com nota 9,5. Em seguida, pergunte: Calcular a média de outro aluno? (S/N). Se a resposta for S, repita; caso contrário, encerre e mostre a quantidade de alunos aprovados.
+
+    let n1
+    let n2
+    let media
+    let alunosAprovados = 0
+    let alunosReprovados = 0
+    
+    while (true) {
+
+        while (true) {
+
+            n1 = Number(prompt(`Digite a primeira nota: `))
+
+            if (!isNaN(n1)) {
+                break;
+            }
+
+            alert(`Digite uma nota válida!`)
+
+        } 
+        
+        while (true) {
+
+            n2 = Number(prompt(`Digite a segunda nota: `))
+
+            if (!isNaN(n2)) {
+                break;
+            }
+
+            alert(`Digite uma nota válida!`)
+        }
+
+        media = ((n1+n2)/2)
+        
+        alert(`A média das notas: ${n1} & ${n2} é -> ${media}`)
+
+        if (media >= 9.5){
+            alunosAprovados++
+        }
+        else{
+            alunosReprovados++
+        }
+
+        let resposta = prompt(`Calcular a média de outro aluno? (S/N)`).toUpperCase()
+
+        if (resposta == "S")
+            continue
+        
+        else if (resposta == "N"){
+            break
+        }
+
+    }
+
+    alert(`ALUNOS APROVADOS: ${alunosAprovados}`)
+    alert(`ALUNOS REPROVADOS: ${alunosReprovados}`)
+  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

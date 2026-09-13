@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3.7</title>
+    <script>
+
+    //3.7. Leia um valor N (N > 0) e imprima todos os inteiros de 1 até N.
+
+    let n1
+
+    while (true) {
+        n1 = Number(prompt(`Digite um valor: `))
+
+        if (!isNaN(n1) && n1 > 0) {
+            break;
+        }
+        alert(`Digite um valor válido acima de 0!`)
+    }
+
+    for(let i = 1; i <= n1; i++){
+        document.write(`${i} `)
+    }
+  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
