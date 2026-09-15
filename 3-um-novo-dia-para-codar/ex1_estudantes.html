@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    let estudantes = [];
+
+    while(true){
+
+        let aluno = prompt(`Digite o nome do aluno: `) 
+        estudantes.push(aluno)
+        
+        let resposta = prompt((`Deseja adcionar outro aluno SIM/PARE`)).toUpperCase()
+
+
+        while(resposta != "SIM" && resposta != "PARE"){
+            alert(`Digite apenas SIM ou PARE`)
+            resposta = prompt((`Deseja adcionar outro aluno SIM/PARE`)).toUpperCase()
+        }
+
+        if (resposta == "PARE"){
+            break
+        }
+
+    }
+
+    alert(`A lista de estudantes é: ${estudantes}
+    Quantidade de alunos adcionados: ${estudantes.len}`)
+
+</script>
+<body>
+    
+</body>
+</html>
