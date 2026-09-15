@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 - Planetas</title>
+</head>
+<script>
+
+    let planetas = ["Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Plutão"];
+
+    while(true){
+
+        planeta = prompt(`Digite o nome de um planeta: `).toUpperCase()
+
+        planetas = planetas.map(function(p) {
+            return p.toUpperCase();
+        })
+
+        if (planeta == "GONZAGA"){
+            alert(`Ele é uma estrela, não um planeta!`)
+        }
+
+        if (planetas.includes(planeta)){
+            alert(`Tem esse planeta parça`);
+        }
+
+        else{
+            alert(`Tem nao man`);
+        }
+
+        resposta = prompt(`Deseja digitar outro planeta? SIM / PARE`).toUpperCase()
+
+        while (resposta != "SIM" && resposta != "PARE"){
+            alert(`Digite apenas SIM ou PARE`)
+            resposta = prompt(`Deseja digitar outro planeta? SIM / PARE`).toUpperCase()
+        }
+
+        if (resposta == "PARE"){
+            break;
+        }
+
+    }
+
+</script>
+<body>
+    
+</body>
+</html>
