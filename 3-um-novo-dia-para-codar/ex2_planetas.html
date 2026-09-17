@@ -8,14 +8,14 @@
 <script>
 
     let planetas = ["Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Plutão"];
-
+    planetas = planetas.map(function(p) {
+            return p.toUpperCase();
+        })
+        
     while(true){
 
         planeta = prompt(`Digite o nome de um planeta: `).toUpperCase()
 
-        planetas = planetas.map(function(p) {
-            return p.toUpperCase();
-        })
 
         if (planeta == "GONZAGA"){
             alert(`Ele é uma estrela, não um planeta!`)
@@ -29,11 +29,11 @@
             alert(`Tem nao man`);
         }
 
-        resposta = prompt(`Deseja digitar outro planeta? SIM / PARE`).toUpperCase()
+        resposta = prompt(`Deseja digitar outro planeta? SIM / PARE`).toUpperCase().trim();
 
         while (resposta != "SIM" && resposta != "PARE"){
             alert(`Digite apenas SIM ou PARE`)
-            resposta = prompt(`Deseja digitar outro planeta? SIM / PARE`).toUpperCase()
+            resposta = prompt(`Deseja digitar outro planeta? SIM / PARE`).toUpperCase().trim();
         }
 
         if (resposta == "PARE"){
