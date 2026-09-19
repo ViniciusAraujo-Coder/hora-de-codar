@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 - Agenda de Contatos</title>
+</head>
+<script>
+
+    let contatos = []
+    
+    function adicionarContato(){
+
+        let nome = prompt(`👤 Digite o nome do contato: `).trim()
+        let telefone = prompt(`📞 Digite o telefone do contato:`).trim()
+
+        contatos.push({
+            nome: nome,
+            telefone: telefone
+        })
+
+        alert(`Contato adicionado com sucesso!`)
+
+    }
+
+    function buscarContato(){
+
+        let nome = prompt (`🔎 Digite o nome que deseja buscar:`).trim()
+        let contato = contatos.find(function(c){
+            return c.nome.toUpperCase() == nome.toUpperCase()
+        })
+
+        if (contato){
+            alert(`🔎 CONTATO ENCONTRADO:
+            
+            👤 Nome: ${contato.nome}
+            
+            📞 Telefone: ${contato.telefone}`)
+        }
+
+        else{
+            alert(`Contato não encontrado!`)
+        }
+
+    }
+
+    function removerContato(){
+
+        let nome = prompt(`🗑️ Digite o nome do contato que deseja remover:`).trim()
+
+        let indice = contatos.findIndex(function(c){
+            return c.nome.toUpperCase() == nome.toUpperCase()
+        })
+
+
+        /*quando o findIndex nao acha nada, o valor é -1 "encontrado"*/
+        if (indice != -1){
+            alert(`Contato: [${contatos[indice].nome}] removido com sucesso!`)
+            contatos.splice(indice, 1)
+        }
+
+        else{
+            alert(`Contato não encontrado.`)
+        }
+    }
+
+    function listarContatos() {
+
+        if (contatos.length == 0) {
+
+            alert(`📭 Nenhum contato cadastrado.`)
+
+        }
+
+        else {
+
+            let lista = `📋 CONTATOS CADASTRADOS\n\n`
+
+            for (let i = 0; i < contatos.length; i++) {
+
+                lista += `👤 ${contatos[i].nome} | 📞 ${contatos[i].telefone}\n\n`
+
+            }
+
+            alert(lista)
+
+        }
+    }
+
+    let sair = false
+
+    while (!sair){
+
+        let comando = prompt(`📱 AGENDA DE CONTATOS
+        
+        Escolha uma opção:
+
+        ➕ ADICIONAR
+        🔎 BUSCAR
+        🗑️ REMOVER
+        📋 LISTAR
+        🚪 SAIR
+        
+        `).toUpperCase().trim()
+
+
+        switch (comando) {
+
+            case "ADICIONAR":
+                adicionarContato()
+                break
+
+            case "BUSCAR":
+                buscarContato()
+                break
+
+            case "REMOVER":
+                removerContato()
+                break
+
+            case "LISTAR":
+                listarContatos()
+                break
+
+            case "SAIR":
+                alert(` 👋 Agenda encerrada!
+                Total de contatos: ${contatos.length}
+                `)
+                sair = true
+                break
+
+            default:
+                alert(`⚠️ Comando inválido!`)
+        }
+    }
+
+</script>
+
+
+
+<body>
+
+</body>
+
+</html>
