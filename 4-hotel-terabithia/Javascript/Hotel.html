@@ -3,42 +3,98 @@
 <head>
 
 	<script>
-	
+		let usuario;
+		let hospedes = []
 
 		function inicio() {
 
-			var escolha = parseInt(prompt('Selecione uma opção 1.) Reserva de Quartos 2.) Cadastro de Hóspedes 3.) Abastecimento de Carros 4.) Sair'));
+            var escolha = parseInt(prompt(`
+🏨 HOTEL AURORA\n 
+Selecione uma opção:\n
+[1] 🛏️ Reserva de Quartos
+[2] 👤 Cadastro de Hóspedes
+[3] 🎉 Eventos
+[4] ❄️ Ar-Condicionado
+[5] ⛽ Abastecimento
+[6] 📊 Relatórios Operacionais
+[7] Sair`));
 
-			if (escolha === 1) {
-				reserva_quartos();
-			} else if (escolha === 2) {
-				cadastro_hospedes();
-			} else if (escolha === 3) {
-				abastecer_carros();
-			} else if (escolha === 4) {
-				sair();
-			} else {
-				erro();
+			switch(escolha){
+				case 1:
+					reserva_quartos();
+					break;
+				case 2:
+					cadastro_hospedes();
+					break;
+				case 3:
+					eventos();
+					break;
+				case 4:
+					arCondcionado();
+					break;
+				case 5:
+					abastecer_carros();
+					break;
+				case 6:
+					relatorios();
+					break;	
+				case 7:
+					sair();
+					break;
+				default:
+					erro();
+					break
 			}
-		}		
+		}
+
+		function login(){
+
+			alert(`🏨 Bem-vindo ao Hotel Aurora!`)
+
+			let usuario = prompt(`Digite seu nome:`)
+			
+			let contador = 3
+			
+			let senha = parseInt(prompt(`Digite sua senha:`))
+
+			while(senha != 241074 && contador > 0){
+				contador--
+
+				if(contador > 0){
+					alert(`Senha errada, voce tem apenas ${contador} tentativas!`)
+					senha = parseInt(prompt(`Digite sua senha:`))
+				}
+			}
+
+			if (contador == 0) {
+				alert(`Tentativas excedidas! `)
+			}
+
+			else {
+				alert(`🏨 Bem-vindo ao Hotel Aurora, ${usuario}! É um imenso prazer ter você por aqui!`)
+				inicio();
+			}
+
+		}
+
 
 		function reserva_quartos() {
-			alert('HOTEL {NOME DO HOTEL} - RESERVA DE QUARTOS');
+			alert('🏨 HOTEL AURORA - RESERVA DE QUARTOS');
 			inicio();
 		}
 
 		function cadastro_hospedes() {
-			alert('HOTEL {NOME DO HOTEL} - CADASTRO DE HÓSPEDES');
+			alert('🏨 HOTEL AURORA - CADASTRO DE HÓSPEDES');
 			inicio();
 		}
 
 		function abastecer_carros() {
-			alert('HOTEL {NOME DO HOTEL} - ABASTECER');
+			alert('🏨 HOTEL AURORA - ABASTECER');
 			inicio();
 		}
 
 		function erro() {
-			alert('Por favor, informe um número entre 1 e 4');
+			alert('Por favor, informe um número entre 1 e 7');
 			inicio();
 		}
 
@@ -53,7 +109,7 @@
 
 		
 		
-		inicio();
+		login();
 	</script>
 </head>
 
