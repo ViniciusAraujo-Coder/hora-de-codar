@@ -17,7 +17,7 @@ Selecione uma opção:\n
 [4] ❄️ Ar-Condicionado
 [5] ⛽ Abastecimento
 [6] 📊 Relatórios Operacionais
-[7] Sair`));
+[7] 🚪 Sair`));
 
 			switch(escolha){
 				case 1:
@@ -47,17 +47,26 @@ Selecione uma opção:\n
 			}
 		}
 
+
 		function login(){
-			alert(`🏨 Bem-vindo ao Hotel Aurora!`)
-			let usuario = prompt(`Digite seu nome`)
-			let senha
-			let tentativas = 3
+			alert(`🏨 Bem-vindo ao Hotel Aurora!`);
+			usuario = prompt(`👋 Digite seu nome`);
+
+			if (usuario == ""){
+				while(!usuario != ""){
+					alert(`Por favor informe um nome!`)
+					usuario = prompt(`👋 Digite seu nome`);
+				}
+			}
+
+			let senha;
+			let tentativas = 3;
 
 			while (tentativas > 0){
-				senha = parseInt(prompt(`Digite sua senha:`));
+				senha = parseInt(prompt(`🔑 Digite sua senha:`));
 
-				if (senha == 241074){
-					alert(`🏨 Bem-vindo ao Hotel Aurora, ${usuario}! É um imenso prazer ter você por aqui!`);
+				if (senha == 123){
+					alert(`🏨🔓 Bem-vindo ao Hotel Aurora, ${usuario}! É um imenso prazer ter você por aqui!`);
             		inicio();
             		return;
 				}
@@ -65,10 +74,13 @@ Selecione uma opção:\n
 				tentativas--;
 
 				if (tentativas > 0){
-					alert(`Senha errada! Você ainda tem ${tentativas} tentativa(s).`);
+					alert(`🔒 Senha errada! Você ainda tem ${tentativas} tentativa(s).`);
+				}
+				
+				else{
+					alert(`🔒 Tentativas excedidas!`);
 				}
 
-				alert(`Tentativas excedidas!`)
 			}
 
 
@@ -76,6 +88,26 @@ Selecione uma opção:\n
 
 		function reserva_quartos() {
 			alert('🏨 HOTEL AURORA - RESERVA DE QUARTOS');
+
+			let valorDiaria = parseFloat(prompt(`Informe o valor da diária: `));
+
+			while(isNaN(valorDiaria)){
+				alert(`Por favor informe o valor da diária.`)
+				valorDiaria = parseFloat(prompt(`Informe o valor da diária: `));
+			}
+
+			let quantidadeDias = parseInt(prompt(`Ìnforme a quantidade de diárias (1-30):`))
+
+			while(isNaN(quantidadeDias) || quantidadeDias < 1 || quantidadeDias > 30 ){
+				alert(`Valor inválido, ${usuario}. Digite a quantidade de dias entre 1 a 30.`)
+				quantidadeDias = parseInt(prompt(`Ìnforme a quantidade de diárias (1-30):`))
+			}
+
+			let nomeHospede = prompt(`Informe o nome do hóspede: `)
+
+			let tipoQuarto = prompt(`Tipo de quarto (S/E/L): `)
+
+			let numeroQuarto = parseInt(`Escolha um quarto (1-20): `)
 			inicio();
 		}
 
