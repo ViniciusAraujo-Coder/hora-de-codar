@@ -3,6 +3,7 @@
 <head>
 
 	<script>
+		
 		let usuario;
 		let hospedes = []
 
@@ -50,12 +51,12 @@ Selecione uma opção:\n
 
 		function login(){
 			alert(`🏨 Bem-vindo ao Hotel Aurora!`);
-			usuario = prompt(`👋 Digite seu nome`);
+			usuario = prompt(`👋 Digite seu nome`).trim();
 
 			if (usuario == ""){
 				while(!usuario != ""){
 					alert(`Por favor informe um nome!`)
-					usuario = prompt(`👋 Digite seu nome`);
+					usuario = prompt(`👋 Digite seu nome`).trim();
 				}
 			}
 
@@ -89,25 +90,51 @@ Selecione uma opção:\n
 		function reserva_quartos() {
 			alert('🏨 HOTEL AURORA - RESERVA DE QUARTOS');
 
-			let valorDiaria = parseFloat(prompt(`Informe o valor da diária: `));
+			let valorDiaria = parseFloat(prompt(`💵 Informe o valor da diária: `));
 
 			while(isNaN(valorDiaria)){
 				alert(`Por favor informe o valor da diária.`)
-				valorDiaria = parseFloat(prompt(`Informe o valor da diária: `));
+				valorDiaria = parseFloat(prompt(`💵 Informe o valor da diária: `));
 			}
-
-			let quantidadeDias = parseInt(prompt(`Ìnforme a quantidade de diárias (1-30):`))
-
+			
+			let quantidadeDias = parseInt(prompt(`🕒 Informe a quantidade de diárias (1-30):`));
+			
 			while(isNaN(quantidadeDias) || quantidadeDias < 1 || quantidadeDias > 30 ){
-				alert(`Valor inválido, ${usuario}. Digite a quantidade de dias entre 1 a 30.`)
-				quantidadeDias = parseInt(prompt(`Ìnforme a quantidade de diárias (1-30):`))
+				alert(`Valor inválido, ${usuario}. Digite a quantidade de dias entre 1 a 30.`);
+				quantidadeDias = parseInt(prompt(`🕒 Ìnforme a quantidade de diárias (1-30):`));
+			}
+			
+			let nomeHospede = prompt(`👤 Informe o nome do hóspede: `).trim();
+			
+			while (nomeHospede == ""){
+				alert(`Digite o nome do hóspede por favor, ${usuario}`);
+				nomeHospede = prompt(`👤 Informe o nome do hóspede: `).trim();
+			}
+			
+			let tipoQuarto = prompt(`🛏️ Tipo de quarto (S/E/L): `).toUpperCase().trim();
+			
+			while(tipoQuarto != "S" && tipoQuarto != "E" &&tipoQuarto != "L"){
+				alert(`🛏️ Tipo de quarto inválido, ${usuario}.`)
+				tipoQuarto = prompt(`Tipo de quarto (S/E/L): `).toUpperCase().trim();
+			}
+			
+			let numeroQuarto = parseInt(prompt(`Escolha um quarto (1-20): `))
+			
+			while(isNaN(numeroQuarto)){
+				alert(`Valor inválido, ${usuario}.`)
+				numeroQuarto = parseInt(prompt(`Escolha um quarto (1-20): `))
 			}
 
-			let nomeHospede = prompt(`Informe o nome do hóspede: `)
+			let valoraPagar
 
-			let tipoQuarto = prompt(`Tipo de quarto (S/E/L): `)
-
-			let numeroQuarto = parseInt(`Escolha um quarto (1-20): `)
+			hospedes.push({
+				valorDiaria: valorDiaria,
+				quantidadeDias: quantidadeDias,
+				nomeHospede: nomeHospede,
+				tipoQuarto: tipoQuarto,
+				numeroQuarto: numeroQuarto
+			})
+		
 			inicio();
 		}
 
