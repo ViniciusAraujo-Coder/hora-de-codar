@@ -92,7 +92,7 @@ Selecione uma opção:\n
 
 			let valorDiaria = parseFloat(prompt(`💵 Informe o valor da diária: `));
 
-			while(isNaN(valorDiaria)){
+			while(isNaN(valorDiaria) || valorDiaria < 0){
 				alert(`Por favor informe o valor da diária.`)
 				valorDiaria = parseFloat(prompt(`💵 Informe o valor da diária: `));
 			}
@@ -113,19 +113,31 @@ Selecione uma opção:\n
 			
 			let tipoQuarto = prompt(`🛏️ Tipo de quarto (S/E/L): `).toUpperCase().trim();
 			
-			while(tipoQuarto != "S" && tipoQuarto != "E" &&tipoQuarto != "L"){
+			while(tipoQuarto != "S" && tipoQuarto != "E" && tipoQuarto != "L"){
 				alert(`🛏️ Tipo de quarto inválido, ${usuario}.`)
 				tipoQuarto = prompt(`Tipo de quarto (S/E/L): `).toUpperCase().trim();
 			}
 			
 			let numeroQuarto = parseInt(prompt(`Escolha um quarto (1-20): `))
 			
-			while(isNaN(numeroQuarto)){
+			while(isNaN(numeroQuarto) || numeroQuarto < 0 || numeroQuarto > 20){
 				alert(`Valor inválido, ${usuario}.`)
 				numeroQuarto = parseInt(prompt(`Escolha um quarto (1-20): `))
 			}
 
-			let valoraPagar
+			let fatorTipoQuarto;
+
+			switch(tipoQuarto){
+				case "S": //Fator 1.00
+					fatorTipoQuarto = 1.00
+					break;
+				case "E": //Fator 1.35
+					fatorTipoQuarto = 1.35
+					break;
+				case "L": //Fator 1.65
+					fatorTipoQuarto = 1.65
+					break;
+			}
 
 			hospedes.push({
 				valorDiaria: valorDiaria,
@@ -134,6 +146,16 @@ Selecione uma opção:\n
 				tipoQuarto: tipoQuarto,
 				numeroQuarto: numeroQuarto
 			})
+
+			let valoraPagar = (valorDiaria * quantidadeDias * fatorTipoQuarto)
+			let taxaServico = (valoraPagar * 0.10)
+
+			alert(`💵 VALOR A PAGAR:
+
+🛏️ CUSTOS DE QUARTO - R$${valoraPagar}.
+🛠️TAXA DE SERVIÇO - R$${taxaServico}.
+
+🛎️💵TOTAL - R$${valoraPagar + taxaServico}`);
 		
 			inicio();
 		}
@@ -154,7 +176,7 @@ Selecione uma opção:\n
 		}
 
 		function sair() {
-			var confirma = confirm('Você deseja sair?');
+			var confirma = confirm('🚪 Você deseja sair?');
 			if (confirma) {
 				window.close();
 			} else {
