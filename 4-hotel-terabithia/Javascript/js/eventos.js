@@ -41,30 +41,31 @@ function eventos() {
 👥 Participantes: ${quantidadeParticipantes}
 🪑 Cadeiras adcionais: ${cadeirasExtras}`);
 
-    let diaDaSemana = prompt(`📅 Digite o dia da semana que ocorrerá o evento: `).trim().toLowerCase();
 
+let horarioOcupado = true;
+let diaDaSemana;
+let horaInicial;
+let duracao;
+let duracaoTotal;
+
+while (horarioOcupado) {
+
+    diaDaSemana = prompt(`📅 Digite o dia da semana que ocorrerá o evento: `).trim().toLowerCase();
+    
     while (!semana.includes(diaDaSemana)) {
         alert(`❌ Dia da semana inválido! ${usuario}.`);
-
+    
         diaDaSemana = prompt(`📅 Digite o dia da semana que ocorrerá o evento: `).trim().toLowerCase();
     }
-
+    
     if (diaDaSemana == "sabado" || diaDaSemana == "domingo") {
         horaPermitida = 15;
     }
-
+    
     else {
         horaPermitida = 23;
     }
-
-    let horarioOcupado = true;
-
-    let horaInicial;
-    let duracao;
-    let duracaoTotal;
-
-    while (horarioOcupado) {
-
+    
         horaInicial = parseInt(prompt(`🕒 Que horas irá se iniciar o evento? (Digite apenas números inteiros)`));
 
         while (
@@ -160,12 +161,11 @@ function eventos() {
 🏢 EMPRESA - ${empresa}
 
 📍 AUDITÓRIO - Auditório: ${espacoReservado}
-Cadeiras adicionais: ${cadeirasExtras}
+🪑 Cadeiras adicionais: ${cadeirasExtras}
 
-📅 AGENDA
-Dia: ${diaDaSemana}
-Horário: ${horaInicial}h às ${duracaoTotal}h
-Duração: ${duracao} hora(s)
+🔍 AGENDA
+📅 Dia: ${diaDaSemana} | 🕒 Horário: ${horaInicial}h às ${duracaoTotal}h
+⏳ Duração: ${duracao} hora(s)
 
 👥 PARTICIPANTES
 Convidados: ${quantidadeParticipantes}
@@ -177,12 +177,9 @@ Garçons necessários: ${quantidadeGarcons + reforco}
 🥪 Salgados: ${quantidadeParticipantes * 7} unidades
 
 💰 CUSTOS
-Garçons: R$ ${custoGarcons.toFixed(2)}
-Buffet: R$ ${custoBuffet.toFixed(2)}
+Garçons: R$ ${custoGarcons.toFixed(2)} | Buffet: R$ ${custoBuffet.toFixed(2)}
 
-💵 TOTAL DO EVENTO: R$ ${totalEvento.toFixed(2)}
-
-    `);
+💵 TOTAL DO EVENTO: R$ ${totalEvento.toFixed(2)}`);
 
     let confirma = prompt(`
     Deseja confirmar a reserva do evento? (S/N)
