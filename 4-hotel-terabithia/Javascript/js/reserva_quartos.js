@@ -17,7 +17,7 @@ function reserva_quartos() {
 
     let nomeHospede = prompt(`👤 Informe o nome do hóspede: `).trim();
 
-    while (nomeHospede == ""){
+    while (nomeHospede == "" || !isNaN(nomeHospede)){
         alert(`Digite o nome do hóspede por favor, ${usuario}`);
         nomeHospede = prompt(`👤 Informe o nome do hóspede: `).trim();
     }
@@ -89,7 +89,7 @@ function reserva_quartos() {
     }
 
     if(confirma == "S"){
-        hospedes.push({
+        reservas.push({
             valorDiaria: valorDiaria,
             quantidadeDias: quantidadeDias,
             nomeHospede: nomeHospede,

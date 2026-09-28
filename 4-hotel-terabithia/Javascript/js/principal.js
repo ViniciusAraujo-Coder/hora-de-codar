@@ -1,6 +1,8 @@
 let usuario;
 let hospedes = [];
 let quartosOcupados = [];
+let reservas = [];
+let agendaEventos = [];
 
 function inicio() {
     let escolha = parseInt(prompt(`
@@ -21,7 +23,7 @@ Selecione uma opção:
             reserva_quartos();
             break;
         case 2:
-            cadastro_hospedes();
+            menuHospedes();
             break;
         case 3:
             eventos();
@@ -48,8 +50,8 @@ function login(){
     alert(`🏨 Bem-vindo ao Hotel Aurora!`);
     usuario = prompt(`👋 Digite seu nome`).trim();
 
-    if (usuario == ""){
-        while(!usuario != ""){
+    if (usuario == "" || !isNaN(usuario)){
+        while(!usuario != "" || !isNaN(usuario)){
             alert(`Por favor informe um nome!`);
             usuario = prompt(`👋 Digite seu nome`).trim();
         }
