@@ -197,7 +197,8 @@ Garçons: R$ ${custoGarcons.toFixed(2)} | Buffet: R$ ${custoBuffet.toFixed(2)}
             dia: diaDaSemana,
             horaInicio: horaInicial,
             horaFim: duracaoTotal,
-            empresa: empresa
+            empresa: empresa,
+            total: totalEvento
         });
 
         alert(`✅ Reserva efetuada com sucesso.`);

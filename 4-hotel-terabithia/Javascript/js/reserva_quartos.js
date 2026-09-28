@@ -94,7 +94,8 @@ function reserva_quartos() {
             quantidadeDias: quantidadeDias,
             nomeHospede: nomeHospede,
             tipoQuarto: tipoQuarto,
-            numeroQuarto: numeroQuarto
+            numeroQuarto: numeroQuarto,
+            total: valoraPagar + taxaServico
         });
 
         quartosOcupados.push(numeroQuarto);
