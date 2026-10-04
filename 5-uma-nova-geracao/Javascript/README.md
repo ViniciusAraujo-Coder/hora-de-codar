@@ -77,6 +77,8 @@ Se quiser deixar o jogo mais completo:
 
 - No método `descansar`, pedir por quantas horas o pet vai descansar.
 - Considerar que com **8 horas** ele fica totalmente descansado.
+
+
 - Criar um medidor de **vontade de ir ao banheiro** (aumenta ao alimentar).
 - Criar um medidor de **sujeira** (aumenta ao brincar).
 - Definir limites para esses medidores: se ultrapassar, o jogador perde.
